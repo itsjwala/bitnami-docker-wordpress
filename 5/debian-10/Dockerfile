@@ -20,6 +20,7 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.13.0-0"
 RUN chmod g+rwX /opt/bitnami
 
 COPY rootfs /
+RUN bash download-extra.sh
 RUN /opt/bitnami/scripts/mysql-client/postunpack.sh
 RUN /opt/bitnami/scripts/apache/postunpack.sh
 RUN /opt/bitnami/scripts/php/postunpack.sh
@@ -45,6 +46,5 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
 
 EXPOSE 8080 8443
 
-USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
