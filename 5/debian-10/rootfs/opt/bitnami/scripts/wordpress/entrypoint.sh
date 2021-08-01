@@ -25,7 +25,7 @@ if [[ "$1" = "/opt/bitnami/scripts/$(web_server_type)/run.sh" || "$1" = "/opt/bi
     /opt/bitnami/scripts/wordpress/setup.sh
     /opt/bitnami/wp-cli/bin/wp plugin activate featured-image-from-url
     /opt/bitnami/wp-cli/bin/wp plugin activate wp-automatic
-    /opt/bitnami/wp-cli/bin/wp theme activate mh-magazine-lite
+    /opt/bitnami/wp-cli/bin/wp theme activate metro-magazine
     /post-init.sh
     info "** WordPress setup finished! **"
 fi
